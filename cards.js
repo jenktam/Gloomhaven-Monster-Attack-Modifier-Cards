@@ -74,10 +74,6 @@ function shuffleDeck(cardPool) {
 
 console.log("shuffleDeck(allCards):", shuffleDeck(allCards));
 
-// generate random card from pile of cards
-	// var randomJob = JobArray[Math.floor(Math.random() * JobArray.length)];
-
-
 function drawTopCard(shuffledPool) {
 	var chosenCard = 0;
 	chosenCard = shuffledPool[0];
@@ -141,11 +137,3 @@ console.log(drawTopCard(shuffleDeck(allCards)));
 // console.log(drawTopCard(shuffleDeck(allCards)));
 
 // console.log(drawTopCard(shuffleDeck(allCards)));
-
-
-/* create a function that will look at all of the cards within 
-the number of cards left in the battle stack 
-and choose a random card based on one drawn
-*/
-
-// Find designs or use overlay for cards an modifier numbers
