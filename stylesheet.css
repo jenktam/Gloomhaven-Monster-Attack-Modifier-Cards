@@ -1,3 +1,30 @@
 h1 {
-	color: red;
+	font-size: 50px !important;
+	font-family: 'Pirata One' !important;
+	}
+
+.container {
+	text-align: center;
+}
+
+body {
+	font-family: 'PirataOne';
+}
+
+.image {
+  padding: 20px 0;
+}
+
+img {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+	backface-visibility: hidden;
+	color: white;
+	font-family: 'PirataOne';
+	font-size: 100%;
+	text-shadow: 1px 2px 3px black;
+	background-clip: content-box;
+	background-origin: content-box;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 15px;
 }

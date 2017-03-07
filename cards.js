@@ -15,13 +15,20 @@
 	 // 	isBlue = !isBlue;
 	 // }, 1000);
 
-	 var button = document.querySelector("button");
-	 button.addEventListener("click", function() {
+	 var img = document.querySelector("img");
+	 img.addEventListener("click", function() {
 	 	console.log(drawTopCard(shuffleDeck(allCards)));
 	 });
 
-	// }
 
+function changeImage() {
+	if(document.getElementById("imgClickAndChange").src == "images/top.jpg") {
+		console.log("img.src is \"images/top.jpg\"");
+		document.getElementById("imgClickAndChange").src === "images/1.jpg";
+	}
+}
+
+changeImage();
 
 // create variable objects for each card
 var allCards = [
@@ -83,3 +90,17 @@ function drawTopCard(shuffledPool) {
 
 
 console.log(drawTopCard(shuffleDeck(allCards)));
+
+var interval = 5; // delay between rotating images (in seconds)  
+var random_display = 0; // 0 = no, 1 = yes  
+interval *= 1000;
+
+// images
+var image_list = ["images/1.jpg", "images/2.jpg", "images/-1.jpg", "images/-2.jpg", "images/0.jpg", "images/2x.jpg"];
+
+console.log(image_list);
+
+// if card is drawn, find value and display corresponding image on top of deck
+// function changeImg() {
+// 	var +1
+// }
