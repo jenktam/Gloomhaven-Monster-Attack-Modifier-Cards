@@ -22,8 +22,8 @@
 
 
 function changeImage() {
-	if(document.getElementById("imgClickAndChange").src == "images/top.jpg") {
-		console.log("img.src is \"images/top.jpg\"");
+	if(document.getElementById("imgClickAndChange").src == "images/top.JPG") {
+		console.log("img.src is \"images/top.JPG\"");
 		document.getElementById("imgClickAndChange").src === "images/1.jpg";
 	}
 }
