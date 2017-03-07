@@ -1,10 +1,10 @@
 // Testing
 // {
-	 var h1 = document.querySelector("h1");
-	 h1.style.color = "pink";
+	 // var h1 = document.querySelector("h1");
+	 // h1.style.color = "pink";
 
-	 var body = document.querySelector("body");
-	 var isBlue = false;
+	 // var body = document.querySelector("body");
+	 // var isBlue = false;
 
 	 // setInterval(function() {
 	 // 	if(isBlue) {
@@ -15,25 +15,15 @@
 	 // 	isBlue = !isBlue;
 	 // }, 1000);
 
-	 var card = document.getElementById("card");
-	 var ul = document.querySelector("ul");
-	 var li = document.getElementsByTagName("li");
 	 var button = document.querySelector("button");
 	 button.addEventListener("click", function() {
-	 	console.log("Someone clicked me!")
+	 	console.log(drawTopCard(shuffleDeck(allCards)));
 	 });
 
-	 // var tags = document.getElementsByTagName("head");
 	// }
 
 
-// create variables for card types
-
-// Card Object
-// {
-// 	value: integer
-// }
-
+// create variable objects for each card
 var allCards = [
 ];
 
@@ -46,6 +36,7 @@ function addCards(cardPool,value,count){
 	return cardPool;
 }
 
+// initialize deck
 function init(cardPool) {
 	addCards(cardPool, 0, 1)
 	addCards(cardPool, -2, 1);
@@ -59,7 +50,7 @@ function init(cardPool) {
 
 init(allCards);
 
-console.log("allCards:", allCards);
+// console.log("allCards:", allCards);
 
 // shuffle deck
 function shuffleDeck(cardPool) {
@@ -72,7 +63,7 @@ function shuffleDeck(cardPool) {
 	return cardPool;
 }
 
-console.log("shuffleDeck(allCards):", shuffleDeck(allCards));
+// console.log("shuffleDeck(allCards):", shuffleDeck(allCards));
 
 function drawTopCard(shuffledPool) {
 	var chosenCard = 0;
@@ -90,50 +81,5 @@ function drawTopCard(shuffledPool) {
 	return chosenCard;
 }
 
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-console.log(drawTopCard(shuffleDeck(allCards)));
-// Last
-console.log(drawTopCard(shuffleDeck(allCards)));
 
-
-// // test again
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-// console.log(drawTopCard(shuffleDeck(allCards)));
-
-// console.log(drawTopCard(shuffleDeck(allCards)));
+console.log(drawTopCard(shuffleDeck(allCards)));
