@@ -1,43 +1,12 @@
-// Testing
-// {
-	 // var h1 = document.querySelector("h1");
-	 // h1.style.color = "pink";
-
-	 // var body = document.querySelector("body");
-	 // var isBlue = false;
-
-	 // setInterval(function() {
-	 // 	if(isBlue) {
-	 // 		body.style.background = "white";
-	 // 	} else {
-	 // 		body.style.background = "#2498db";
-	 // 	}
-	 // 	isBlue = !isBlue;
-	 // }, 1000);
-
-	 var img = document.querySelector("img");
-	 img.addEventListener("click", function() {
-	 	console.log(drawTopCard(shuffleDeck(allCards)));
-	 });
-
-
-function changeImage() {
-	if(document.getElementById("imgClickAndChange").src == "images/top.JPG") {
-		console.log("img.src is \"images/top.JPG\"");
-		document.getElementById("imgClickAndChange").src === "images/1.jpg";
-	}
-}
-
-changeImage();
-
 // create variable objects for each card
 var allCards = [
 ];
 
-function addCards(cardPool,value,count){
+function addCards(cardPool,value,count, image){
 	var obj = {};
 	for(var i = 0; i < count; i++) {
 		obj["value"] = value;
+		obj["image"] = image;
 		cardPool.push(obj);
 	}
 	return cardPool;
@@ -45,19 +14,17 @@ function addCards(cardPool,value,count){
 
 // initialize deck
 function init(cardPool) {
-	addCards(cardPool, 0, 1)
-	addCards(cardPool, -2, 1);
-	addCards(cardPool, -1, 5);
-	addCards(cardPool, 0, 6);
-	addCards(cardPool, 1, 5);
-	addCards(cardPool, 2, 1);
-	addCards(cardPool, "2x", 1);
+	// addCards(cardPool, "null", 1, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/null.png");
+	addCards(cardPool, -2, 1, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/-2.png");
+	// addCards(cardPool, -1, 5, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/-1.png");
+	addCards(cardPool, 0, 6, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/0.png");
+	// addCards(cardPool, 1, 5, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/1.png");
+	// addCards(cardPool, 2, 1, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/2.png");
+	addCards(cardPool, "2x", 1, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/2x.png");
 	shuffleDeck(cardPool);
 }
 
 init(allCards);
-
-// console.log("allCards:", allCards);
 
 // shuffle deck
 function shuffleDeck(cardPool) {
@@ -70,37 +37,53 @@ function shuffleDeck(cardPool) {
 	return cardPool;
 }
 
-// console.log("shuffleDeck(allCards):", shuffleDeck(allCards));
-
-function drawTopCard(shuffledPool) {
+function drawTopCard(shuffledPool, discardPool) {
 	var chosenCard = 0;
 	chosenCard = shuffledPool[0];
-	if(chosenCard["value"] === 0 || chosenCard["value"] === "2x" || shuffledPool.length === 0) {
-		shuffledPool.length = 0;
-		chosenCard;
+	if(chosenCard === undefined) {
 		init(shuffledPool);
 	}
+	else if(chosenCard["value"] === "null" || chosenCard["value"] === "2x" || shuffledPool.length === 0) {
+		shuffledPool.push.apply(shuffledPool,discardPool);
+		discardPool.length = 0;
+		shuffleDeck(shuffledPool);
+		console.log("shuffledPool2:", JSON.stringify(shuffledPool));
+	}
 	else {
-		// console.log("shuffledPool1:", shuffledPool);
 		shuffledPool.splice(0,1);
-		// console.log("shuffledPool2:", shuffledPool);
+		if(!(chosenCard["value"] === "bless" || chosenCard["value"] === "curse")) {
+			discardPool.push(chosenCard);
 		}
+		console.log("shuffledPool2:", JSON.stringify(shuffledPool));
+	}
 	return chosenCard;
 }
 
+var shuffledDeck = shuffleDeck(allCards);
+var discardedCards = [];
 
-console.log(drawTopCard(shuffleDeck(allCards)));
+// Change card based on used click
+var img = document.querySelector("img");
+img.addEventListener("click", function() {
+	var chosenCard = drawTopCard(shuffledDeck, discardedCards);
+	console.log(chosenCard);
+	originalImage.src = chosenCard["image"];
+	console.log("discardedCards:", JSON.stringify(discardedCards));
+});
 
-var interval = 5; // delay between rotating images (in seconds)  
-var random_display = 0; // 0 = no, 1 = yes  
-interval *= 1000;
+var originalImage = document.getElementById("imgClickAndChange");
 
-// images
-var image_list = ["images/1.jpg", "images/2.jpg", "images/-1.jpg", "images/-2.jpg", "images/0.jpg", "images/2x.jpg"];
+// Add bless card
+var bless = document.getElementById("bless");
+bless.addEventListener("click", function() {
+	addCards(allCards, "bless", 1, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/bless.png");
+	shuffleDeck(allCards);
+	console.log("shuffledDeck:", JSON.stringify(shuffledDeck));
+});
 
-console.log(image_list);
-
-// if card is drawn, find value and display corresponding image on top of deck
-// function changeImg() {
-// 	var +1
-// }
+// Add curse card
+var curse = document.getElementById("curse");
+curse.addEventListener("click", function() {
+	addCards(allCards, "curse", 1, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/curse.png");
+	shuffleDeck(allCards);
+});

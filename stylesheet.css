@@ -8,13 +8,46 @@ h1 {
 }
 
 body {
+	font-family: 'Pirata One';
+}
+
+button {
+	font-family: 'Pirata One' !important;
+  font-size: 25px !important;
+	padding: 10px;
+	margin: 0 20px;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+	backface-visibility: hidden;
+	color: white !important;
 	font-family: 'PirataOne';
+	/* font-size: 100%; */
+	text-shadow: 1px 2px 3px black;
+	background-clip: content-box;
+	background-origin: content-box;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 10px;
+	background: #951515;
+}
+
+button:hover {
+    /* opacity: .9; */
+    background: #741414;
 }
 
 .image {
   padding: 20px 0;
+/*  position: relative;
+    text-align: center;
+    width: calc(437px + 1rem);
+    max-width: 147.6vh;
+    margin: 8px;*/
 }
 
+@media only screen and (min-height: 500px) and (orientation: portrait) .image {
+    max-width: 49.2vh !important;
+}
 img {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 	backface-visibility: hidden;
@@ -27,4 +60,29 @@ img {
 	background-repeat: no-repeat;
 	background-size: cover;
 	border-radius: 15px;
+  /*max-width: 50%;*/
+}
+
+/* code that is here, until the first @media block, will apply to any screen size */
+img {
+  max-width: 350px;
+}
+
+@media screen and (max-width: 320px) {
+  /* comes into effect for screens less than or equal to 320 pixels */
+  img {
+    max-width: 400px ;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  /* comes into effect for screens between 321 and 480 pixels (inclusive) */
+  img {
+    width: 400px ;
+  }
+}
+@media screen and (min-width: 481px) {
+  /* comes into effect for screens larger than or equal to 481 pixels */
+  img {
+    width: 500px ;
+  }
 }
