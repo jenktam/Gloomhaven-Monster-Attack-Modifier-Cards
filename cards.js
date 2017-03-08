@@ -14,13 +14,13 @@ function addCards(cardPool,value,count, image){
 
 // initialize deck
 function init(cardPool) {
-	// addCards(cardPool, "null", 1, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/null.png");
-	addCards(cardPool, -2, 1, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/-2.png");
-	// addCards(cardPool, -1, 5, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/-1.png");
-	addCards(cardPool, 0, 6, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/0.png");
-	// addCards(cardPool, 1, 5, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/1.png");
-	// addCards(cardPool, 2, 1, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/2.png");
-	addCards(cardPool, "2x", 1, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/2x.png");
+	addCards(cardPool, "null", 1, "images/null.png");
+	addCards(cardPool, -2, 1, "images/-2.png");
+	addCards(cardPool, -1, 5, "images/-1.png");
+	addCards(cardPool, 0, 6, "images/0.png");
+	addCards(cardPool, 1, 5, "images/1.png");
+	addCards(cardPool, 2, 1, "images/2.png");
+	addCards(cardPool, "2x", 1, "images/2x.png");
 	shuffleDeck(cardPool);
 }
 
@@ -61,6 +61,7 @@ function drawTopCard(shuffledPool, discardPool) {
 
 var shuffledDeck = shuffleDeck(allCards);
 var discardedCards = [];
+var originalImage = document.getElementById("imgClickAndChange");
 
 // Change card based on used click
 var img = document.querySelector("img");
@@ -71,12 +72,10 @@ img.addEventListener("click", function() {
 	console.log("discardedCards:", JSON.stringify(discardedCards));
 });
 
-var originalImage = document.getElementById("imgClickAndChange");
-
 // Add bless card
 var bless = document.getElementById("bless");
 bless.addEventListener("click", function() {
-	addCards(allCards, "bless", 1, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/bless.png");
+	addCards(allCards, "bless", 1, "images/bless.png");
 	shuffleDeck(allCards);
 	console.log("shuffledDeck:", JSON.stringify(shuffledDeck));
 });
@@ -84,6 +83,6 @@ bless.addEventListener("click", function() {
 // Add curse card
 var curse = document.getElementById("curse");
 curse.addEventListener("click", function() {
-	addCards(allCards, "curse", 1, "/Dev/Gloomhaven%20Attack%20Modifier%20Cards%20-%20Monsters/images/curse.png");
+	addCards(allCards, "curse", 1, "images/curse.png");
 	shuffleDeck(allCards);
 });
