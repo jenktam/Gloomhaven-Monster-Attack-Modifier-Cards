@@ -4,4 +4,4 @@ Gloomhaven is a Euro-style tactical combat board game. Players dungeon-crawl thr
 
 View the working product [here](https://jenktam.github.io/Gloomhaven-Monster-Attack-Modifier-Cards/).
 
-If your interested in learning more about this wonderful game, you can read about it [here](https://www.kickstarter.com/projects/1350948450/gloomhaven).
+If your interested in learning more about this wonderful game, check out its [Kickstarter](https://www.kickstarter.com/projects/1350948450/gloomhaven).
