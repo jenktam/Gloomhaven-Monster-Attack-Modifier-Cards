@@ -22,12 +22,20 @@ body {
 }
 
 h1 {
+	color: #ffffff !important;
+	background-image: url('https://ksr-ugc.imgix.net/assets/005/169/371/f39adbb4484cbab16338ce507fb25bfd_original.jpg?w=1600&fit=max&v=1452358772&auto=format&q=92&s=d4b96b8a00022053c25969d7d5dd7bdf');
+	opacity: 0.8;
 	font-size: 50px !important;
 	font-family: 'Pirata One' !important;
+  margin: 0 0 10px !important;
+  padding: 10px;
+  text-shadow: 0.1em 0.1em 0.2em black;
+  border: 2px solid #522c2c;
 	}
 
 .container {
 	text-align: center;
+	padding: 0 !important;
 }
 
 .footerContainer {
@@ -122,4 +130,8 @@ img {
   img {
 	  width: 350px;
   }
+
+  .container {
+	    width: 100% !important;
+	}
 }
