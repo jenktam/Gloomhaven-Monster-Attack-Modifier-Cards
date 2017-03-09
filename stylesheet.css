@@ -90,25 +90,36 @@ img {
 }
 
 /* code that is here, until the first @media block, will apply to any screen size */
-img {
-  max-width: 350px;
-}
 
 @media screen and (max-width: 320px) {
   /* comes into effect for screens less than or equal to 320 pixels */
   img {
-    max-width: 400px ;
+    max-width: 80% ;
+  }
+  button {
+  	max-width: 80%;
   }
 }
+
 @media screen and (min-width: 321px) and (max-width: 480px) {
   /* comes into effect for screens between 321 and 480 pixels (inclusive) */
   img {
-    width: 400px ;
+    width: 80%;
+  }
+  button {
+  	width: 80%;
   }
 }
-@media screen and (min-width: 481px) {
+
+@media screen and (min-width: 481px) and (max-width: 800px) {
   /* comes into effect for screens larger than or equal to 481 pixels */
   img {
-    width: 500px ;
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  img {
+	  width: 350px;
   }
 }
