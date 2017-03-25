@@ -1,5 +1,5 @@
-var modifierDeckController = function(startingCardArray){
-  this.discardedCards = new Deck();
+var modifierDeckController = function(startingCardArray,view){
+  this.discardedCards = [];
   this.currentDeck = new Deck();
 
   var self = this;
@@ -13,7 +13,21 @@ var modifierDeckController = function(startingCardArray){
   initializeDeck(startingCardArray);
 }
 
-var test2 = new Card(32, "1.png", false);
-var test3 = new Card(12, "22.png", false);
-
-var newModifierDeckController = new modifierDeckController([test2, test3]);
+modifierDeckController.prototype = {
+  drawAndDiscardCard: function (){
+    var topCard = this.currentDeck.drawCard();
+    this.discardedCards.push(topCard);
+    view.showACard(topCard);
+    console.log("this.discardedCards deck:", this.discardedCards);
+  },
+  addBlessCard: function(){
+    var blessCard = new MultiplierCard(2, "images/bless.png", true);
+    this.currentDeck.addCard(blessCard);
+    this.currentDeck.shuffle();
+  },
+  addCurseCard: function(){
+    var curseCard = new MultiplierCard(0, "images/curse.png", true);
+    this.currentDeck.addCard(curseCard);
+    this.currentDeck.shuffle();
+  }
+}
