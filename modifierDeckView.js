@@ -1,12 +1,30 @@
-var ModifierDeckView = function(elements) {
-  this.elements = elements;
+/*
+view: layer with the webpage that the user sees
+*/
+var ModifierDeckView = function(drawButton, cardImage, blessButton, curseButton) {
+  this.drawButton = drawButton;
+  this.cardImage = cardImage;
+  this.blessButton = blessButton;
+  this.curseButton = curseButton;
 }
 
 ModifierDeckView.prototype = {
   showACard: function(card){
-    var cardImage = elements["cardImage"];
-    cardImage.src = card["img"];
-  }
+    this.cardImage.src = card.img;
+  },
+
+  addDrawEventListener: function(fnc) {
+    this.drawButton.addEventListener('click', fnc);
+  },
+
+  addBlessCardEventListener: function(fnc){
+    this.blessButton.addEventListener('click', fnc)
+  },
+
+  addCurseCardEventListener: function(fnc){
+    this.curseButton.addEventListener('click', fnc)
+  },
+
 }
 
 /*
@@ -18,7 +36,7 @@ elements: {
   cardImage: html element
 }
 
-functions to implement:
-showACard(Card)
+player reshuffles when gets a 2x or a null card
+
 */
 

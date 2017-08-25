@@ -1,17 +1,25 @@
 // Entry point ot application. Gets all explicity information need
 // Uses the JSON file
 
+/*
+Model = card, desk, multiplierCard js files
+* holds all the data objects
+
+*/
 var drawButton = document.getElementById("drawButton");
 //...
 var cardImage = document.getElementById("imgClickAndChange");
-var elements = {
-  drawButton: drawButton,
-  cardImage: cardImage
-};
 
-var view = new ModifierDeckView(elements);
+var blessButton = document.getElementById('bless')
 
-var test2 = new Card(32, "images/bless.png", false);
-var test3 = new Card(12, "images/curse.png", false);
+var curseButton = document.getElementById('curse')
 
-var newModifierDeckController = new modifierDeckController([test2, test3],view);
+var view = new ModifierDeckView(drawButton, cardImage, blessButton, curseButton);
+
+// Create all cards from JSON file using an AJAX call
+// separate to cardLoader Controller in the future
+var modifierDeckController = new modifierDeckController(monstersDeck, view);
+
+
+// var test2 = new Card(32, "images/bless.png", false);
+// var test3 = new Card(12, "images/curse.png", false);

@@ -1,4 +1,4 @@
-[
+var monstersDeck = [
   {
     "type": "multiplier",
     "value": 0,
@@ -10,12 +10,6 @@
     "value": -2,
     "img": "images/-2.png",
     "oneTimeUse": false
-  }, 
-  {
-    "type": "adder",
-    "value": -1,
-    "img": "images/-1.png",
-    "oneTimeUse": false
   },
   {
     "type": "adder",
@@ -28,7 +22,13 @@
     "value": -1,
     "img": "images/-1.png",
     "oneTimeUse": false
-  },  
+  },
+  {
+    "type": "adder",
+    "value": -1,
+    "img": "images/-1.png",
+    "oneTimeUse": false
+  },
   {
     "type": "adder",
     "value": -1,
