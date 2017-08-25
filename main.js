@@ -10,7 +10,11 @@ var drawButton = document.getElementById("drawButton");
 //...
 var cardImage = document.getElementById("imgClickAndChange");
 
-var view = new ModifierDeckView(drawButton, cardImage);
+var blessButton = document.getElementById('bless')
+
+var curseButton = document.getElementById('curse')
+
+var view = new ModifierDeckView(drawButton, cardImage, blessButton, curseButton);
 
 // Create all cards from JSON file using an AJAX call
 // separate to cardLoader Controller in the future

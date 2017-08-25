@@ -18,6 +18,10 @@ var modifierDeckController = function(startingCardArray,view){
   self.currentDeck.shuffle() //then shuffle existing deck
 
   view.addDrawEventListener(self.drawAndDiscardCard.bind(self))
+
+  view.addBlessCardEventListener(self.addBlessCard.bind(self))
+
+  view.addCurseCardEventListener(self.addCurseCard.bind(self))
 }
 
 modifierDeckController.prototype = {
@@ -27,7 +31,9 @@ modifierDeckController.prototype = {
     this.discardedCards.push(topCard);
     view.showACard(topCard);
 
-    this.drawButton.style.opacity = "0.5"
+    //add some type of visual cue when cards switch here?
+    this.drawButton.style.color = "red"
+
     //make sure bless and curse cards are removed after drawn
     console.log("this.discardedCards deck:", this.discardedCards);
   },
@@ -35,10 +41,12 @@ modifierDeckController.prototype = {
     var blessCard = new MultiplierCard(2, "images/bless.png", true);
     this.currentDeck.addCard(blessCard);
     this.currentDeck.shuffle();
+    console.log("bless card added")
   },
   addCurseCard: function(){
     var curseCard = new MultiplierCard(0, "images/curse.png", true);
     this.currentDeck.addCard(curseCard);
     this.currentDeck.shuffle();
+    console.log("curse card added")
   }
 }

@@ -1,9 +1,11 @@
 /*
 view: layer with the webpage that the user sees
 */
-var ModifierDeckView = function(drawButton, cardImage) {
+var ModifierDeckView = function(drawButton, cardImage, blessButton, curseButton) {
   this.drawButton = drawButton;
   this.cardImage = cardImage;
+  this.blessButton = blessButton;
+  this.curseButton = curseButton;
 }
 
 ModifierDeckView.prototype = {
@@ -13,7 +15,16 @@ ModifierDeckView.prototype = {
 
   addDrawEventListener: function(fnc) {
     this.drawButton.addEventListener('click', fnc);
-  }
+  },
+
+  addBlessCardEventListener: function(fnc){
+    this.blessButton.addEventListener('click', fnc)
+  },
+
+  addCurseCardEventListener: function(fnc){
+    this.curseButton.addEventListener('click', fnc)
+  },
+
 }
 
 /*
@@ -25,7 +36,7 @@ elements: {
   cardImage: html element
 }
 
-functions to implement:
-showACard(Card)
+player reshuffles when gets a 2x or a null card
+
 */
 
