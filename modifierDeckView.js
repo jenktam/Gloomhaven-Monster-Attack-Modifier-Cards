@@ -14,7 +14,16 @@ ModifierDeckView.prototype = {
   },
 
   addDrawEventListener: function(fnc) {
-    this.drawButton.addEventListener('click', fnc);
+    this.drawButton.addEventListener('click', () => {
+      this.drawButton.classList.add('highlight')
+      setTimeout( function() {
+        this.drawButton.classList.remove('highlight')
+      }, 100)
+
+      fnc()
+
+    });
+
   },
 
   addBlessCardEventListener: function(fnc){

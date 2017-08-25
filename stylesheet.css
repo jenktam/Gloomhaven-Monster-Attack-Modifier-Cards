@@ -128,3 +128,14 @@ img {
 #drawButton {
 	margin: 30px 0;
 }
+
+.highlight {
+		opacity: 0.5 !important;
+    transition: visibility 0s linear 300ms, opacity 300ms;
+}
+
+.unhighlight {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 300ms;
+}

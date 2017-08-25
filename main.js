@@ -7,11 +7,10 @@ Model = card, desk, multiplierCard js files
 
 */
 var drawButton = document.getElementById("drawButton");
-//...
+var highlightButton = document.getElementsByClassName('highlight')
+var unhighlightButton = document.getElementsByClassName('unhighlight')
 var cardImage = document.getElementById("imgClickAndChange");
-
 var blessButton = document.getElementById('bless')
-
 var curseButton = document.getElementById('curse')
 
 var view = new ModifierDeckView(drawButton, cardImage, blessButton, curseButton);

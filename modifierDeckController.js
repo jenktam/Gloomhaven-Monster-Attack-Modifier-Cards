@@ -31,9 +31,6 @@ modifierDeckController.prototype = {
     this.discardedCards.push(topCard);
     view.showACard(topCard);
 
-    //add some type of visual cue when cards switch here?
-    this.drawButton.style.color = "red"
-
     //make sure bless and curse cards are removed after drawn
     console.log("this.discardedCards deck:", this.discardedCards);
   },
