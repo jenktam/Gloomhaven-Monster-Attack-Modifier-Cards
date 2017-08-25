@@ -15,6 +15,7 @@ var modifierDeckController = function(startingCardArray,view){
   }
 
   initializeDeck(startingCardArray);
+  self.currentDeck.shuffle() //then shuffle existing deck
 
   view.addDrawEventListener(self.drawAndDiscardCard.bind(self))
 }
@@ -22,8 +23,11 @@ var modifierDeckController = function(startingCardArray,view){
 modifierDeckController.prototype = {
   drawAndDiscardCard: function (){
     var topCard = this.currentDeck.drawCard();
+    console.log("topCard", topCard)
     this.discardedCards.push(topCard);
     view.showACard(topCard);
+
+    this.drawButton.style.opacity = "0.5"
     //make sure bless and curse cards are removed after drawn
     console.log("this.discardedCards deck:", this.discardedCards);
   },
