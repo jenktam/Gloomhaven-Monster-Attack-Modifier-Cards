@@ -1,11 +1,18 @@
-var ModifierDeckView = function(elements) {
-  this.elements = elements;
+/*
+view: layer with the webpage that the user sees
+*/
+var ModifierDeckView = function(drawButton, cardImage) {
+  this.drawButton = drawButton;
+  this.cardImage = cardImage;
 }
 
 ModifierDeckView.prototype = {
   showACard: function(card){
-    var cardImage = elements["cardImage"];
-    cardImage.src = card["img"];
+    this.cardImage.src = card.img;
+  },
+
+  addDrawEventListener: function(fnc) {
+    this.drawButton.addEventListener('click', fnc);
   }
 }
 

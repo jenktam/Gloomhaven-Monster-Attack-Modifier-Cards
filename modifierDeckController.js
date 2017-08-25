@@ -1,3 +1,7 @@
+/*
+Controller: performs all the logic for the app
+*/
+
 var modifierDeckController = function(startingCardArray,view){
   this.discardedCards = [];
   this.currentDeck = new Deck();
@@ -11,6 +15,8 @@ var modifierDeckController = function(startingCardArray,view){
   }
 
   initializeDeck(startingCardArray);
+
+  view.addDrawEventListener(self.drawAndDiscardCard.bind(self))
 }
 
 modifierDeckController.prototype = {
@@ -18,6 +24,7 @@ modifierDeckController.prototype = {
     var topCard = this.currentDeck.drawCard();
     this.discardedCards.push(topCard);
     view.showACard(topCard);
+    //make sure bless and curse cards are removed after drawn
     console.log("this.discardedCards deck:", this.discardedCards);
   },
   addBlessCard: function(){

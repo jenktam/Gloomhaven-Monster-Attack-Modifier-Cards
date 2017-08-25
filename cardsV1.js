@@ -25,7 +25,7 @@ var allCards = [
 	}
 ];
 
-function addCards(cardPool,value,count){
+function addCards(cardPool, value, count){
 	var obj = {};
 	for(var i = 0; i < count; i++) {
 		obj["value"] = value;
@@ -39,7 +39,7 @@ addCards(allCards, -2, 1);
 addCards(allCards, -1, 5);
 addCards(allCards, 0, 6);
 addCards(allCards, 1, 5);
-addCards(allCards, 2), 1;
+addCards(allCards, 2, 1);
 addCards(allCards, "2n", 1);
 console.log(allCards);
 
@@ -143,8 +143,8 @@ console.log("shuffledDeck:", shuffledDeck);
 
 // console.log("remove(allCards):", remove(allCards));
 
-/* create a function that will look at all of the cards within 
-the number of cards left in the battle stack 
+/* create a function that will look at all of the cards within
+the number of cards left in the battle stack
 and choose a random card based on one drawn
 */
 
