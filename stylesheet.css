@@ -4,21 +4,6 @@ body {
   font-size: 20px;
 }
 
-h1 {
-	color: #ffffff;
-	background-image: url('https://ksr-ugc.imgix.net/assets/005/169/371/f39adbb4484cbab16338ce507fb25bfd_original.jpg?w=1600&fit=max&v=1452358772&auto=format&q=92&s=d4b96b8a00022053c25969d7d5dd7bdf');
-	opacity: 0.8;
-	font-size: 60px;
-	font-family: 'Pirata One';
-  margin: 0 0 10px;
-  padding: 20px;
-  text-shadow: 0.1em 0.1em 0.2em black;
-  border: 2px solid #522c2c;
-	}
-
-p {
-	margin: 20px 0;
-}
 .container {
 	text-align: center;
 	padding: 0;
@@ -126,7 +111,7 @@ img {
 }
 
 #drawButton {
-	margin: 30px 0;
+	margin: 15px 0;
 }
 
 .highlight {
@@ -141,6 +126,43 @@ img {
 }
 
 .added {
-	padding: 15px 0;
-	height: 15px;
+	height: 45px;
+	width: 350px;
+	margin: 15px auto;
+	padding: 10px 0;
+	letter-spacing: 1px;
+	font-family: 'Pirata One';
+	font-size: 20px;
+	border-radius: 10px;
+	backface-visibility: hidden;
+	color: white;
+	background-clip: content-box;
+	background-origin: content-box;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
+
+.hide {
+	box-shadow: none;
+	backface-visibility: hidden;
+	background: white;
+}
+
+.info {
+	color: #ffffff;
+	background-image: url("images/background.jpg");
+	opacity: 0.7;
+	font-size: 25px;
+	font-family: 'Pirata One';
+	margin: 0 0 30px;
+	padding: 20px 0;
+	text-shadow: 0.1em 0.1em 0.2em black;
+	border: 2px solid #522c2c;
+}
+
+
+h1 {
+	font-size: 60px;
+	padding: 10px;
+	border-bottom: 2px solid #522c2c;
+	}

@@ -36,9 +36,15 @@ ModifierDeckView.prototype = {
       fnc() //add bless card
 
       this.addedDiv.textContent = 'Bless card added!' //add text
+      this.addedDiv.style.textShadow = "1px 2px 3px black";
+      this.addedDiv.style.background = "#951515";
 
       // set timer to remove text after 1/2 second
-      setTimeout( () => this.addedDiv.innerText = '', 500)
+      setTimeout( () => {
+        this.addedDiv.innerText = ''
+        this.addedDiv.style.background = "white"
+        this.addedDiv.style.boxShadow = "none"
+    }, 500)
 
     })
   },
@@ -49,9 +55,15 @@ ModifierDeckView.prototype = {
       fnc() //add bless card
 
       this.addedDiv.textContent = 'Curse card added!' //add text
+      this.addedDiv.style.textShadow = "1px 2px 3px black";
+      this.addedDiv.style.background = "#951515";
 
       // set timer to remove text after 1/2 second
-      setTimeout( () => this.addedDiv.innerText = '', 500)
+      setTimeout( () =>{
+        this.addedDiv.innerText = '';
+        this.addedDiv.style.background = "white"
+        this.addedDiv.style.boxShadow = "none"
+      }, 500)
 
     })
   },

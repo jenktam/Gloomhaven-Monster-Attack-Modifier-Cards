@@ -49,12 +49,10 @@ modifierDeckController.prototype = {
     var blessCard = new MultiplierCard(2, "images/bless.png", true);
     this.currentDeck.addCard(blessCard);
     this.currentDeck.shuffle();
-    console.log("bless card added")
   },
   addCurseCard: function(){
     var curseCard = new MultiplierCard(0, "images/curse.png", true);
     this.currentDeck.addCard(curseCard);
     this.currentDeck.shuffle();
-    console.log("curse card added")
   },
 }
