@@ -197,9 +197,13 @@ img {
     display: inline-block;
     width: 40%;
 	}
+
+	.container {
+		width: 100% !important;
+}
 }
 
-@media screen and (min-width: 481px) and (max-width: 800px) {
+@media screen and (min-width: 701px) and (max-width: 800px) {
   img {
     width: 350px;
 	}
@@ -226,6 +230,10 @@ img {
 	.added {
 		width: 80%;
 	}
+
+	.container {
+		width: 100% !important;
+}
 }
 
 @media screen and (min-width: 801px) {
