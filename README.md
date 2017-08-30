@@ -2,7 +2,7 @@
 
 A [web application](https://jenktam.github.io/Gloomhaven-Monster-Attack-Modifier-Cards/) that automates the monster attack modifier card component of the Euro-style tactical combat board game, Gloomhaven. This application helps to diminish the setup time involved with the physical game components per scenario, so you can spend more time slaying monsters and having fun with your friends.
 
-![Attack Modifier Cards Demo]("https://raw.githubusercontent.com/jenktam/Gloomhaven-Monster-Attack-Modifier-Cards/master/images/GloomhavenAttackModifierCards-ResponsiveDesign.png")
+![Attack Modifier Cards Demo]("https://raw.githubusercontent.com/jenktam/Gloomhaven-Monster-Attack-Modifier-Cards/tree/master/images/responsiveDesign.png")
 
 # Inspiration
 
