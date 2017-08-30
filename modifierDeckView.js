@@ -1,11 +1,15 @@
 /*
-view: layer with the webpage that the user sees
+view:
+* layer with the webpage that the user sees
+* includes any actions that manipulate the DOM
 */
-var ModifierDeckView = function(drawButton, cardImage, blessButton, curseButton) {
+
+var ModifierDeckView = function(drawButton, cardImage, blessButton, curseButton, addedDiv) {
   this.drawButton = drawButton;
   this.cardImage = cardImage;
   this.blessButton = blessButton;
   this.curseButton = curseButton;
+  this.addedDiv = addedDiv;
 }
 
 ModifierDeckView.prototype = {
@@ -27,12 +31,34 @@ ModifierDeckView.prototype = {
   },
 
   addBlessCardEventListener: function(fnc){
-    this.blessButton.addEventListener('click', fnc)
+    this.blessButton.addEventListener('click', () => {
+
+      fnc() //add bless card
+
+      this.addedDiv.textContent = 'Bless card added!' //add text
+
+      // set timer to remove text after 1/2 second
+      setTimeout( () => this.addedDiv.innerText = '', 500)
+
+    })
   },
 
   addCurseCardEventListener: function(fnc){
-    this.curseButton.addEventListener('click', fnc)
+    this.curseButton.addEventListener('click', () => {
+
+      fnc() //add bless card
+
+      this.addedDiv.textContent = 'Curse card added!' //add text
+
+      // set timer to remove text after 1/2 second
+      setTimeout( () => this.addedDiv.innerText = '', 500)
+
+    })
   },
+
+  shuffleDeckEventListener: function(){
+
+  }
 
 }
 

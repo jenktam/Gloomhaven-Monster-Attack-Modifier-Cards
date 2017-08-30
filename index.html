@@ -13,15 +13,18 @@
     <div class="container" id="media">
       <h1>Gloomhaven Attack Modifier Cards</h1>
       <p>To check the attack modifier of the monsters, click on the attack card.</p>
-      <button id="bless">Add Bless Card</button>
-      <button id="curse">Add Curse Card</button>
+      <div>
+        <button id="bless">Add Bless Card</button>
+        <button id="curse">Add Curse Card</button>
+        <div class="added"></div>
+      </div>
       <div id="drawButton" class="unhighlight">
         <img alt="" id="imgClickAndChange" src="images/top.png">
       </div>
     </div>
-    <script type="text/javascript" src="deck.js"></script>
-    <script type="text/javascript" src="card.js"></script>
-    <script type="text/javascript" src="multiplierCard.js"></script>
+    <script type="text/javascript" src="models/deck.js"></script>
+    <script type="text/javascript" src="models/card.js"></script>
+    <script type="text/javascript" src="models/multiplierCard.js"></script>
     <script type="text/javascript" src="cardPools/monstersDeck.js"></script>
     <script type="text/javascript" src="modifierDeckView.js"></script>
     <script type="text/javascript" src="modifierDeckController.js"></script>

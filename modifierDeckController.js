@@ -17,6 +17,7 @@ var modifierDeckController = function(startingCardArray,view){
   initializeDeck(startingCardArray);
   self.currentDeck.shuffle() //then shuffle existing deck
 
+  //executes all logic functions and renders them into the DOM using the modifierDeckView fns
   view.addDrawEventListener(self.drawAndDiscardCard.bind(self))
 
   view.addBlessCardEventListener(self.addBlessCard.bind(self))
@@ -26,13 +27,23 @@ var modifierDeckController = function(startingCardArray,view){
 
 modifierDeckController.prototype = {
   drawAndDiscardCard: function (){
-    var topCard = this.currentDeck.drawCard();
-    console.log("topCard", topCard)
-    this.discardedCards.push(topCard);
-    view.showACard(topCard);
+    var topCard = this.currentDeck.drawCard(); //draw topCard from currentDeck
 
-    //make sure bless and curse cards are removed after drawn
-    console.log("this.discardedCards deck:", this.discardedCards);
+    //as long as topCard is a not bless or curse card, add it to the discardedCards
+    if(topCard.oneTimeUse === false) {
+      this.discardedCards.push(topCard); //once topCard drawn push it to the discardedDeck
+    }
+
+    view.showACard(topCard); //then show the topCard in the DOM
+
+    //put discarded cards back in currentDeck and reshuffle if
+    //1)topCard is a 2x or a null card
+    //2) this.currentDeck is empty
+    if(topCard.type === "multiplier" || !this.currentDeck._cards.length) {
+      this.currentDeck._cards = this.currentDeck._cards.concat(this.discardedCards);
+      this.discardedCards = []; //reset discardedCards to empty array
+      this.currentDeck.shuffle();
+    }
   },
   addBlessCard: function(){
     var blessCard = new MultiplierCard(2, "images/bless.png", true);
@@ -45,5 +56,5 @@ modifierDeckController.prototype = {
     this.currentDeck.addCard(curseCard);
     this.currentDeck.shuffle();
     console.log("curse card added")
-  }
+  },
 }

@@ -13,6 +13,3 @@ MultiplierCard.prototype.constructor = MultiplierCard;
 MultiplierCard.prototype.calculateDamage = function(attackValue){
   return attackValue * this.value;
 }
-
-var multiplierCardTest = new MultiplierCard(5, "hi.png", true);
-multiplierCardTest.calculateDamage(5);

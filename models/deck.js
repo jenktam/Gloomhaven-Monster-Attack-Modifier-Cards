@@ -10,7 +10,7 @@ Deck.prototype = {
 	  	this._cards[i] = this._cards[j];
 		  this._cards[j] = temp;
     }
-    console.log("this._cards:", JSON.stringify(this._cards));
+    // console.log("this._cards:", JSON.stringify(this._cards));
   },
   addCard: function(card) {
     this._cards.push(card);
