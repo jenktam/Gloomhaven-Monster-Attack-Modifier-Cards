@@ -50,64 +50,7 @@ button:hover {
 }
 
 .image {
-  padding: 30px 0;
-}
-
-@media only screen and (min-height: 500px) and (orientation: portrait) .image {
-    max-width: 49.2vh;
-}
-
-img {
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-	backface-visibility: hidden;
-	font-size: 100%;
-	text-shadow: 1px 2px 3px black;
-	background-clip: content-box;
-	background-origin: content-box;
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-radius: 15px;
-}
-
-
-@media screen and (max-width: 320px) {
-	img {
-    max-width: 80% ;
-  }
-  button {
-  	max-width: 80%;
-  }
-}
-
-@media screen and (min-width: 321px) and (max-width: 480px) {
-  img {
-    width: 80%;
-  }
-  button {
-  	width: 80%;
-  }
-}
-
-@media screen and (min-width: 481px) and (max-width: 800px) {
-  img {
-    width: 350px;
-  }
-}
-
-@media screen and (min-width: 801px) {
-  img {
-	  width: 350px;
-  }
-
-  .container {
-	    width: 100% !important;
-	}
-}
-
-@media (min-width: 1200px) {
-	.container {
-	    width: 100% !important;
-	}
+	padding: 30px 0;
 }
 
 #drawButton {
@@ -116,13 +59,13 @@ img {
 
 .highlight {
 		opacity: 0.5 !important;
-    transition: visibility 0s linear 300ms, opacity 300ms;
+		transition: visibility 0s linear 300ms, opacity 300ms;
 }
 
 .unhighlight {
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 0s linear 0s, opacity 300ms;
+		visibility: visible;
+		opacity: 1;
+		transition: visibility 0s linear 0s, opacity 300ms;
 }
 
 .added {
@@ -165,4 +108,138 @@ h1 {
 	font-size: 60px;
 	padding: 10px;
 	border-bottom: 2px solid #522c2c;
+}
+
+img {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+	backface-visibility: hidden;
+	font-size: 100%;
+	text-shadow: 1px 2px 3px black;
+	background-clip: content-box;
+	background-origin: content-box;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 15px;
+}
+
+/* MEDIA SCREEN */
+
+@media screen and (min-width:0) and (max-width:700px) {
+	.info {
+		color: #ffffff;
+		background-image: url("images/background.jpg");
+		opacity: 0.7;
+		font-size: 25px;
+		font-family: 'Pirata One';
+		margin: 0 0 30px;
+		padding: 0 0;
+		text-shadow: 0.1em 0.1em 0.2em black;
+		border-bottom: 2px solid #522c2c;
 	}
+
+
+	h1 {
+		font-size: 25px;
+		border-bottom: 2px solid #522c2c;
+	}
+
+	.info p {
+		/* font-family: 'Arial'; */
+		font-size: 18px;
+	}
+
+	img {
+		width: 80%;
+	}
+
+	button {
+		width: 80%;
+	}
+
+	.added {
+		width: 80%;
+	}
+
+	.text-muted {
+		font-size: 15px;
+	}
+
+	#footer {
+		height: 60px;
+	}
+
+	.footerContainer {
+    text-align: center;
+    top: 20%;
+    position: relative;
+    transform: translateY(20%);
+	}
+
+	button, .added {
+		font-size: 20px;
+	}
+
+	button {
+		font-family: 'Pirata One';
+    font-size: 20px;
+    padding: 5px 0;
+    margin: 0px 0%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    backface-visibility: hidden;
+    color: white;
+    text-shadow: 1px 2px 3px black;
+    background-clip: content-box;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: #951515;
+    display: inline-block;
+    width: 40%;
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 800px) {
+  img {
+    width: 350px;
+	}
+
+	button {
+		font-family: 'Pirata One';
+    font-size: 25px;
+    padding: 5px 0;
+    margin: 0px 0%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    backface-visibility: hidden;
+    color: white;
+    text-shadow: 1px 2px 3px black;
+    background-clip: content-box;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: #951515;
+    display: inline-block;
+    width: 40%;
+	}
+
+	.added {
+		width: 80%;
+	}
+}
+
+@media screen and (min-width: 801px) {
+  img {
+	  width: 350px;
+  }
+
+  .container {
+	    width: 100% !important;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+	    width: 100% !important;
+	}
+}

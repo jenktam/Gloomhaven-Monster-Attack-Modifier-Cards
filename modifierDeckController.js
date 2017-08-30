@@ -37,9 +37,10 @@ modifierDeckController.prototype = {
     view.showACard(topCard); //then show the topCard in the DOM
 
     //put discarded cards back in currentDeck and reshuffle if
-    //1)topCard is a 2x or a null card
+    //1)topCard is a 2x or a null card. oneTimeUse is false
     //2) this.currentDeck is empty
-    if(topCard.type === "multiplier" || !this.currentDeck._cards.length) {
+    console.log("topCard", topCard)
+    if(topCard.type === "multiplier" && topCard.oneTimeUse === false || !this.currentDeck._cards.length) {
       this.currentDeck._cards = this.currentDeck._cards.concat(this.discardedCards);
       this.discardedCards = []; //reset discardedCards to empty array
       this.currentDeck.shuffle();

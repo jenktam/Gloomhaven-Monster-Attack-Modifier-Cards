@@ -67,11 +67,6 @@ ModifierDeckView.prototype = {
 
     })
   },
-
-  shuffleDeckEventListener: function(){
-
-  }
-
 }
 
 /*
