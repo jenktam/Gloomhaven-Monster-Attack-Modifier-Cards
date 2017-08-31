@@ -11,14 +11,14 @@ A [web application](https://jenktam.github.io/Gloomhaven-Monster-Attack-Modifier
 
 # Into the Code
 This application was built with a MVC architecture.
-* *data*: Contains default deck of cards each defined by type, value, img, and oneTimeUse
-* *models*: Javascript objects represented by a card, deck, and multipllierCard
-* *images*: images
-* *index.html*: page invoked when user opens application
+* *data*: Contains default monsters deck and notification text values.
+* *images*: Images
+* *models*: JavaScript objects represented by a card, deck, and multipllierCard
+* *index.html*: Page invoked when user opens application
 * *main.js*: Entry point of application. Gets all information explicitly needs and calls model, view and controller.
 * *modifierDeckController.js*: Performs all the logic for the app by initializing the deck, drawing cards, and adding and curse bless cards.
 * *modifierDeckView.js*: Handles what the user sees and includes actions that manipulate the DOM. This includes event listeners for clicking the card, bless button, and curse button.
-* *stylesheet.css*: CSS files
+* *stylesheets.css*: CSS styles.
 
 # Feedback and Bugs
 If you encounter an issue while using this app, please let me know. You can submit the issue right here on Github or contact me directly at jennifer.k.tam@gmail.com.
