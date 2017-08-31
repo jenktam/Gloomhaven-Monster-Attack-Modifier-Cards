@@ -4,11 +4,13 @@ view:
 * includes any actions that manipulate the DOM
 */
 
-var ModifierDeckView = function(drawButton, cardImage, blessButton, curseButton, addedDiv) {
+var ModifierDeckView = function(drawButton, cardImage, blessButton, curseButton, blessCount, curseCount, addedDiv) {
   this.drawButton = drawButton;
   this.cardImage = cardImage;
   this.blessButton = blessButton;
   this.curseButton = curseButton;
+  this.blessCount = blessCount;
+  this.curseCount = curseCount;
   this.addedDiv = addedDiv;
 }
 
@@ -53,5 +55,14 @@ ModifierDeckView.prototype = {
       this.addedDiv.style.background = "white"
       this.addedDiv.style.boxShadow = "none"
     }, duration)
-  }
+  },
+
+  showBlessCardCount: function(count) {
+    this.blessCount.innerText = count
+  },
+
+  showCurseCardCount: function(count) {
+    this.curseCount.innerText = count
+  },
+
 }

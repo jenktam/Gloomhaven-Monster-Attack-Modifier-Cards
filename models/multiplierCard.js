@@ -1,6 +1,6 @@
-var MultiplierCard = function(value, img, oneTimeUse) {
+var MultiplierCard = function(value, img, oneTimeUse, tag) {
   // Card.call(this, value, img, oneTimeUse);
-  Card.apply(this, [value, img, oneTimeUse]);
+  Card.apply(this, [value, img, oneTimeUse, tag]);
 };
 
 // inherit Card

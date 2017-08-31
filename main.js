@@ -14,10 +14,12 @@ let unhighlightButton = document.getElementsByClassName('unhighlight')
 let cardImage = document.getElementById("imgClickAndChange");
 let blessButton = document.getElementById('bless')
 let curseButton = document.getElementById('curse')
+let blessCount = document.getElementById('bless-count')
+let curseCount = document.getElementById('curse-count')
 let addedDiv = document.querySelector('.added');
 
 // Transport all DOM elements to view to be executed via DOM Manipulation
-var view = new ModifierDeckView(drawButton, cardImage, blessButton, curseButton, addedDiv);
+var view = new ModifierDeckView(drawButton, cardImage, blessButton, curseButton, blessCount, curseCount, addedDiv);
 
 // Create all cards from JSON file using an AJAX call
 // separate to cardLoader Controller in the future

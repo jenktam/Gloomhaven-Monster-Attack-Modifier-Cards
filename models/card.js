@@ -1,7 +1,8 @@
-var Card = function(value, img, oneTimeUse) {
+var Card = function(value, img, oneTimeUse, tag) {
   this.value = value;
   this.img = img;
   this.oneTimeUse = oneTimeUse;
+  this.tag = tag;
 }
 
 Card.prototype = {
