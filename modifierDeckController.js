@@ -2,19 +2,27 @@
 Controller: performs all the logic for the app
 */
 
-var modifierDeckController = function(startingCardArray,view){
+var modifierDeckController = function(startingCardDataArray, view){
   this.discardedCards = [];
   this.currentDeck = new Deck();
 
   var self = this;
 
-  function initializeDeck(startingCardArray) {
-    startingCardArray.forEach(function(card){
-      self.currentDeck.addCard(card);
+  function initializeDeck(startingCardDataArray) {
+    startingCardDataArray.forEach(function(cardData){
+      if(cardData.type === "adder") {
+        let card = new Card(cardData.value, cardData.img, cardData.oneTimeUse)
+
+        self.currentDeck.addCard(card);
+      } else {
+        let multiplierCard = new MultiplierCard(cardData.value, cardData.img, cardData.oneTimeUse)
+
+        self.currentDeck.addCard(multiplierCard);
+      }
     });
   }
 
-  initializeDeck(startingCardArray);
+  initializeDeck(startingCardDataArray);
   self.currentDeck.shuffle() //then shuffle existing deck
 
   //executes all logic functions and renders them into the DOM using the modifierDeckView fns
@@ -36,24 +44,30 @@ modifierDeckController.prototype = {
 
     view.showACard(topCard); //then show the topCard in the DOM
 
-    //put discarded cards back in currentDeck and reshuffle if
-    //1)topCard is a 2x or a null card. oneTimeUse is false
-    //2) this.currentDeck is empty
-    console.log("topCard", topCard)
-    if(topCard.type === "multiplier" && topCard.oneTimeUse === false || !this.currentDeck._cards.length) {
-      this.currentDeck._cards = this.currentDeck._cards.concat(this.discardedCards);
+    //put discarded cards back in currentDeck and reshuffle if card causesReshuffle()
+
+    if(topCard.causesReshuffle()) {
+      this.currentDeck._cards =
+      this.currentDeck._cards.concat(this.discardedCards);
       this.discardedCards = []; //reset discardedCards to empty array
       this.currentDeck.shuffle();
+
+      view.showNotification(textValues.RESHUFFLE_DECK_NOTIFICATION, 1000) // shows notification after 1 second
     }
   },
   addBlessCard: function(){
     var blessCard = new MultiplierCard(2, "images/bless.png", true);
     this.currentDeck.addCard(blessCard);
     this.currentDeck.shuffle();
+
+    view.showNotification(textValues.BLESS_CARD_NOTIFICATION, 500) // shows notification after a 1/2 second
   },
+
   addCurseCard: function(){
     var curseCard = new MultiplierCard(0, "images/curse.png", true);
     this.currentDeck.addCard(curseCard);
     this.currentDeck.shuffle();
+
+    view.showNotification(textValues.CURSE_CARD_NOTIFICATION, 500)
   },
 }

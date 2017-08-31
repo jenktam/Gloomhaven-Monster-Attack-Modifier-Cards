@@ -11,7 +11,7 @@ A [web application](https://jenktam.github.io/Gloomhaven-Monster-Attack-Modifier
 
 # Into the Code
 This application was built with a MVC architecture.
-* *cardPools*: Contains default deck of cards each defined by type, value, img, and oneTimeUse
+* *data*: Contains default deck of cards each defined by type, value, img, and oneTimeUse
 * *models*: Javascript objects represented by a card, deck, and multipllierCard
 * *images*: images
 * *index.html*: page invoked when user opens application

@@ -21,14 +21,3 @@ Deck.prototype = {
     return topCard;
   }
 };
-
-/*var deck = new Deck();
-setTimeout(function(){
-  deck.addCard(test);
-  deck.addCard(test1);
-
-  for(var i=0;i<20;i++){
-    var card = new Card(Math.floor(Math.random() * 100), "blah", false);
-    deck.addCard(card);
-  }
-},1000);*/

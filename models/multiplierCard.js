@@ -13,3 +13,8 @@ MultiplierCard.prototype.constructor = MultiplierCard;
 MultiplierCard.prototype.calculateDamage = function(attackValue){
   return attackValue * this.value;
 }
+
+MultiplierCard.prototype.causesReshuffle = function(){
+  //cause reshuffle if oneTimeUse is false
+  return !this.oneTimeUse;
+}

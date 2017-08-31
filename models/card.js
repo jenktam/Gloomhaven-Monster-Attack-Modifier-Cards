@@ -1,5 +1,5 @@
 var Card = function(value, img, oneTimeUse) {
-  this.value = value; 
+  this.value = value;
   this.img = img;
   this.oneTimeUse = oneTimeUse;
 }
@@ -7,8 +7,9 @@ var Card = function(value, img, oneTimeUse) {
 Card.prototype = {
   calculateDamage: function(attackValue) {
     return attackValue + this.value;
+  },
+
+  causesReshuffle: function(){
+    return false;
   }
 }
-
-/*var test = new Card(1, "1.png", false);
-var test1 = new Card(2, "2.png", false);*/

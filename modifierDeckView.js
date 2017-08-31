@@ -32,53 +32,26 @@ ModifierDeckView.prototype = {
 
   addBlessCardEventListener: function(fnc){
     this.blessButton.addEventListener('click', () => {
-
-      fnc() //add bless card
-
-      this.addedDiv.textContent = 'Bless card added!' //add text
-      this.addedDiv.style.textShadow = "1px 2px 3px black";
-      this.addedDiv.style.background = "#951515";
-
-      // set timer to remove text after 1/2 second
-      setTimeout( () => {
-        this.addedDiv.innerText = ''
-        this.addedDiv.style.background = "white"
-        this.addedDiv.style.boxShadow = "none"
-    }, 500)
-
+      fnc()
     })
   },
 
   addCurseCardEventListener: function(fnc){
     this.curseButton.addEventListener('click', () => {
-
-      fnc() //add bless card
-
-      this.addedDiv.textContent = 'Curse card added!' //add text
-      this.addedDiv.style.textShadow = "1px 2px 3px black";
-      this.addedDiv.style.background = "#951515";
-
-      // set timer to remove text after 1/2 second
-      setTimeout( () =>{
-        this.addedDiv.innerText = '';
-        this.addedDiv.style.background = "white"
-        this.addedDiv.style.boxShadow = "none"
-      }, 500)
-
+      fnc()
     })
   },
+
+  //duration is in milliseconds.
+  showNotification: function(text, duration) {
+    this.addedDiv.textContent = text; //add text
+    this.addedDiv.style.textShadow = "1px 2px 3px black";
+    this.addedDiv.style.background = "#951515";
+
+    setTimeout( () => {
+      this.addedDiv.innerText = ''
+      this.addedDiv.style.background = "white"
+      this.addedDiv.style.boxShadow = "none"
+    }, duration)
+  }
 }
-
-/*
-elements: {
-  drawButton: html element
-  addBlessButton: html element
-  addCurseButton: html element
-  reshuffleButton: html element
-  cardImage: html element
-}
-
-player reshuffles when gets a 2x or a null card
-
-*/
-
